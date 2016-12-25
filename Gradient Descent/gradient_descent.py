@@ -10,7 +10,6 @@ def stochastic_gradient_descent(x,y,theta,alpha,m,max_iter):
 	:param alpha: 学习速率
 	:param m: 样本总数
 	:param max_iter: 最大迭代次数
-
 	"""
 	deviation = 1
 	iter = 0	
@@ -43,7 +42,6 @@ def batch_gradient_descent(x,y,theta,alpha,m,max_iter):
 	:param alpha: 学习速率
 	:param m: 样本总数
 	:param max_iter: 最大迭代次数
-
 	"""
 	deviation = 1
 	iter = 0
@@ -68,12 +66,11 @@ def batch_gradient_descent(x,y,theta,alpha,m,max_iter):
 # data and init 
 matrix_x = [[2.1,1.5],[2.5,2.3],[3.3,3.9],[3.9,5.1],[2.7,2.7]]
 matrix_y = [2.5,3.9,6.7,8.8,4.6]
-
+MAX_ITER = 5000
+EPS = 0.0001 
 #随机梯度
 theta = [2,-1]
-ALPHA = 0.05
-MAX_ITER = 2000
-EPS = 0.0001 
+ALPHA = 0.1
 
 resultTheta,iters = stochastic_gradient_descent(matrix_x, matrix_y, theta, ALPHA, 5, MAX_ITER)
 print 'theta=',resultTheta
@@ -81,9 +78,7 @@ print 'iters=',iters
 
 #批量梯度
 theta = [2,-1]
-ALPHA = 0.05
-MAX_ITER = 1000
-EPS = 0.0001 
+ALPHA = 0.1
 resultTheta,iters = batch_gradient_descent(matrix_x, matrix_y, theta, ALPHA, 5, MAX_ITER)
 print 'theta=',resultTheta
 print 'iters=',iters
